@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YSAPI", "YSAPI\YSAPI.csproj", "{038CEA52-C298-4596-A72F-17EF9C9DF038}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YSAPI.Tests", "YSAPI.Tests\YSAPI.Tests.csproj", "{1CE016E7-5614-4A71-8E72-28431D0838C3}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{038CEA52-C298-4596-A72F-17EF9C9DF038}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{038CEA52-C298-4596-A72F-17EF9C9DF038}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{038CEA52-C298-4596-A72F-17EF9C9DF038}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{038CEA52-C298-4596-A72F-17EF9C9DF038}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1CE016E7-5614-4A71-8E72-28431D0838C3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1CE016E7-5614-4A71-8E72-28431D0838C3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1CE016E7-5614-4A71-8E72-28431D0838C3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1CE016E7-5614-4A71-8E72-28431D0838C3}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
