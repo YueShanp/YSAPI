@@ -27,6 +27,7 @@ namespace YSAPI.Models
         /// 新增者
         /// </summary>
         [Required]
+        [MaxLength(50)]
         public virtual string InUser { get; set; }
 
         /// <summary>
@@ -39,6 +40,7 @@ namespace YSAPI.Models
         /// <summary>
         /// 更新者
         /// </summary>
+        [MaxLength(50)]
         public virtual string EditUser { get; set; }
 
         /// <summary>

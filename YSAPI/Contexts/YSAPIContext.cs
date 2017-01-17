@@ -7,6 +7,7 @@ namespace YSAPI.Contexts
     public class YSAPIContext : DbContext
     {
         public YSAPIContext()
+            : base("name=YSAPIConnection")
         {
         }
 

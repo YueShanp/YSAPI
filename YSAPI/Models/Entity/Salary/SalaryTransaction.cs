@@ -11,7 +11,7 @@ namespace YSAPI.Models
         [Required]
         [StringLength(4)]
         [Display(Name ="工資單年")]
-        public int PayslipYear { get; set; }
+        public string PayslipYear { get; set; }
 
         /// <summary>
         /// 工資單月
@@ -19,7 +19,7 @@ namespace YSAPI.Models
         [Required]
         [StringLength(2)]
         [Display(Name ="工資單月")]
-        public int PayslipMonth { get; set; }
+        public string PayslipMonth { get; set; }
 
 
         /// <summary>
@@ -64,6 +64,7 @@ namespace YSAPI.Models
         /// <summary>
         /// 註記
         /// </summary>
+        [MaxLength(2000)]
         [Display(Name ="註記")]
         public string Note { get; set; }
 

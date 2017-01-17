@@ -5,10 +5,14 @@ using YSAPI.Models;
 
 namespace YSAPI.Controllers
 {
-    [Route("[controller]")]
     public class EmployeeController : ApiController
     {
         private IEmployeeRepository _employeeRepository;
+
+        public EmployeeController()
+        {
+            _employeeRepository = new EmployeeRepository();
+        }
 
         public EmployeeController(IEmployeeRepository employeeRepository)
         {
