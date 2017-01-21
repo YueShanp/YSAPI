@@ -12,7 +12,7 @@ namespace YSAPI.Contexts
             _context = new YSAPIContext();
         }
 
-        public List<Employee> GetAllEmployee() => _context.Employees.ToList();
+        public IEnumerable<Employee> GetAllEmployee() => _context.Employees.ToList();
 
         public Employee GetEmplyee(Guid employeeId)
             => base._context.Employees.FirstOrDefault((Employee x) => Guid.Equals(x.Id, employeeId));

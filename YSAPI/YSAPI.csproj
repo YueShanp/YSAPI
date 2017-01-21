@@ -101,6 +101,9 @@
     <Reference Include="System.Configuration" />
     <Reference Include="System.Web.Services" />
     <Reference Include="System.EnterpriseServices" />
+    <Reference Include="YSLibrary">
+      <HintPath>..\Library\YSLibrary.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System.Web.Razor">
@@ -156,6 +159,8 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Implementation\Employee\EmployeeService.cs" />
+    <Compile Include="Implementation\Employee\IEmployeeService.cs" />
     <Compile Include="Models\Entity\BaseEntity.cs" />
     <Compile Include="Models\Entity\Employee.cs" />
     <Compile Include="Models\Entity\Salary\SalaryMaster.cs" />

@@ -6,7 +6,7 @@ namespace YSAPI.Contexts
 {
     public interface IEmployeeRepository
     {
-        List<Employee> GetAllEmployee();
+        IEnumerable<Employee> GetAllEmployee();
 
         Employee GetEmplyee(Guid employeeId);
 

@@ -7,6 +7,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YSAPI", "YSAPI\YSAPI.csproj
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YSAPI.Tests", "YSAPI.Tests\YSAPI.Tests.csproj", "{1CE016E7-5614-4A71-8E72-28431D0838C3}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Library", "Library", "{D54C0AE7-D492-4F84-8E4D-7521BF41608F}"
+	ProjectSection(SolutionItems) = preProject
+		Library\YSLibrary.dll = Library\YSLibrary.dll
+		Library\YSLibrary.pdb = Library\YSLibrary.pdb
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
