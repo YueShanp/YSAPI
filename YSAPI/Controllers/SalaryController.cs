@@ -1,13 +1,19 @@
-﻿using System.Web.Http;
+﻿using System.Collections.Generic;
+using System.Web.Http;
+using YSAPI.Implementation;
+using YSAPI.Models;
 
 namespace YSAPI.Controllers
 {
     public class SalaryController : ApiController
     {
-        // GET: /<controller>/
-        public string Index()
+        private ISalaryService _salaryService;
+
+        public SalaryController()
         {
-            return "TEST";
+            _salaryService = new SalaryService();
         }
+
+        public IEnumerable<SalaryMaster> GetAll() => _salaryService.GetAll();
     }
 }

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
 using YSAPI.Models;
@@ -12,10 +13,12 @@ namespace YSAPI.Contexts
             _context = new YSAPIContext();
         }
 
-        public SalaryMaster GetSalaryDetail(Guid employeeId)
-        {
-            return _context.Salarys.FirstOrDefault(x => Guid.Equals(x.Emplyee.Id, employeeId));
-        }
+        public IEnumerable<SalaryMaster> GetAll()
+            => _context.Salarys.ToList();
+
+        public SalaryMaster GetSalaryDetail(Guid employeeId) 
+            => _context.Salarys.FirstOrDefault(x => Guid.Equals(x.Emplyee.Id, employeeId));
+
         public void CreateSalary(SalaryMaster salaryMaster)
         {
             if (salaryMaster == null)
@@ -25,7 +28,7 @@ namespace YSAPI.Contexts
 
             _context.Entry(salaryMaster.SalaryTransactions).State = EntityState.Unchanged;
             _context.Salarys.Add(salaryMaster);
-            this.SaveChanges();
+            SaveChanges();
         }
 
         public void CreateSalaryTransaction(SalaryTransaction salaryTransaction)
@@ -36,7 +39,7 @@ namespace YSAPI.Contexts
             }
 
             _context.SalaryTransaction.Add(salaryTransaction);
-            this.SaveChanges();
-        }
+            SaveChanges();
+        }        
     }
 }

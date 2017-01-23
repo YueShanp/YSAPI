@@ -1,4 +1,7 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.Net;
+using System.Web;
 using YSAPI.Contexts;
 using YSAPI.Models;
 
@@ -17,8 +20,31 @@ namespace YSAPI.Implementation
 
         public string CreateEmplyeeService(Employee employee)
         {
+            if (!ValidateEmployee(employee))
+            {
+                throw new HttpException((int)HttpStatusCode.BadRequest, "BadRequest");
+            }
 
-            return "Fail";
+            try
+            {
+                _employeeRepository.CreateEmployee(employee);
+            }
+            catch (ArgumentException ex)
+            {
+                return ex.ToString();
+            }
+
+            return "Ok";
+        }
+
+        private bool ValidateEmployee(Employee employee)
+        {
+            if (employee == null)
+            {
+                return false;
+            }
+
+            return true;
         }
     }
 }

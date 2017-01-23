@@ -161,6 +161,8 @@
     </Compile>
     <Compile Include="Implementation\Employee\EmployeeService.cs" />
     <Compile Include="Implementation\Employee\IEmployeeService.cs" />
+    <Compile Include="Implementation\Salary\ISalaryService.cs" />
+    <Compile Include="Implementation\Salary\SalaryService.cs" />
     <Compile Include="Models\Entity\BaseEntity.cs" />
     <Compile Include="Models\Entity\Employee.cs" />
     <Compile Include="Models\Entity\Salary\SalaryMaster.cs" />
