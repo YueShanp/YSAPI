@@ -7,6 +7,8 @@ namespace YSAPI.Implementation
     {
         IEnumerable<Employee> GetAllEmployee();
 
-        string CreateEmplyeeService(Employee employee);
+        bool CreateEmplyeeService(Employee employee);
+
+        bool UpdateEmplyeeService(Employee employee);
     }
 }

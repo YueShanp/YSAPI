@@ -18,7 +18,7 @@ namespace YSAPI.Implementation
 
         public IEnumerable<Employee> GetAllEmployee() => _employeeRepository.GetAllEmployee();
 
-        public string CreateEmplyeeService(Employee employee)
+        public bool CreateEmplyeeService(Employee employee)
         {
             if (!ValidateEmployee(employee))
             {
@@ -31,10 +31,11 @@ namespace YSAPI.Implementation
             }
             catch (ArgumentException ex)
             {
-                return ex.ToString();
+                // TODO: write log ex
+                return false;
             }
 
-            return "Ok";
+            return true;
         }
 
         private bool ValidateEmployee(Employee employee)
@@ -45,6 +46,11 @@ namespace YSAPI.Implementation
             }
 
             return true;
+        }
+
+        public bool UpdateEmplyeeService(Employee employee)
+        {
+            throw new NotImplementedException();
         }
     }
 }

@@ -19,6 +19,6 @@ namespace YSAPI.Controllers
         public IEnumerable<Employee> GetAll() => _employeeService.GetAllEmployee();
 
         [HttpPost]
-        public string Create(Employee e) => _employeeService.CreateEmplyeeService(e);
+        public bool Create(Employee e) => _employeeService.CreateEmplyeeService(e);
     }
 }
