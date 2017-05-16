@@ -19,8 +19,8 @@ namespace YSAPI.Models
         /// <summary>
         /// 新增日期時間
         /// </summary>
+        ///[DatabaseGenerated(DatabaseGeneratedOption.Computed)]
         [Required]
-        [DatabaseGenerated(DatabaseGeneratedOption.Computed)]
         public virtual DateTime InDateTime { get; set; }
 
         /// <summary>
@@ -33,8 +33,8 @@ namespace YSAPI.Models
         /// <summary>
         /// 更新日期時間
         /// </summary>
-        [Required]
-        [DatabaseGenerated(DatabaseGeneratedOption.Computed)]
+        /// //[DatabaseGenerated(DatabaseGeneratedOption.Computed)] 確認預設值到底要怎樣設定
+        [Required]        
         public DateTime EditDateTime { get; set; }
 
         /// <summary>

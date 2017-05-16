@@ -1,7 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Net;
-using System.Web;
 using YSAPI.Contexts;
 using YSAPI.Models;
 
@@ -20,11 +18,11 @@ namespace YSAPI.Implementation
 
         public bool CreateEmplyeeService(Employee employee)
         {
-            if (!ValidateEmployee(employee))
-            {
-                throw new HttpException((int)HttpStatusCode.BadRequest, "BadRequest");
-            }
-
+            employee.InDateTime = DateTime.Now;
+            employee.InUser = "sys";
+            employee.EditDateTime = DateTime.Now;
+            employee.EditUser = "sys";
+            
             try
             {
                 _employeeRepository.CreateEmployee(employee);

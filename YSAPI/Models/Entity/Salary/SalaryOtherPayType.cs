@@ -5,8 +5,8 @@ using System.Web;
 
 namespace YSAPI.Models
 {
-    public enum SalaryOtherPayType
+    public class SalaryOtherPayType : BaseEntity<Guid>
     {
-
+        public string OtherPayName { get; set; }
     }
 }

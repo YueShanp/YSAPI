@@ -171,7 +171,7 @@
     <Compile Include="Models\Enum\EmplyeeStatus.cs" />
     <Compile Include="Models\Enum\EntityStatus.cs" />
     <Compile Include="Models\Enum\PhoneType.cs" />
-    <Compile Include="Models\Enum\Salary\SalaryOtherPayType.cs" />
+    <Compile Include="Models\Entity\Salary\SalaryOtherPayType.cs" />
     <Compile Include="Models\Enum\Salary\SalaryStatus.cs" />
     <Compile Include="Models\Enum\Salary\SalaryType.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -1,27 +1,19 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.Linq;
 
 namespace YSAPI.Models
 {
     public class SalaryTransaction : BaseEntity<Guid>
     {
         /// <summary>
-        /// 工資單年
+        /// 工資單年月
         /// </summary>
         [Required]
-        [StringLength(4)]
-        [Display(Name = "工資單年")]
-        public string PayslipYear { get; set; }
-
-        /// <summary>
-        /// 工資單月
-        /// </summary>
-        [Required]
-        [StringLength(2)]
+        [StringLength(6)]
         [Display(Name = "工資單月")]
-        public string PayslipMonth { get; set; }
-
+        public string PayYearMonth { get; set; }
 
         /// <summary>
         /// 發薪日
@@ -43,24 +35,18 @@ namespace YSAPI.Models
         [Display(Name = "加班工資")]
         public decimal OverTimePay { get; set; }
 
-        /////// <summary>
-        /////// 獎金
-        /////// </summary>
-        ////[Display(Name ="獎金")]
-        ////public decimal Bonus { get; set; }
-
-        /// <summary>
-        /// 其他工資
-        /// </summary>
-        [Display(Name = "其他工資")]
-        public decimal OtherPay { get; set; }
-
         /// <summary>
         /// 實發總工資
         /// </summary>
         [Required]
         [Display(Name = "實發總工資")]
-        public decimal TotalPay { get; set; }
+        public decimal TotalPay
+        {
+            get
+            {
+                return BasePay + OverTimePay + SalaryOtherPayTransactionList.Sum(x => x.Amount);
+            }
+        }
 
         /// <summary>
         /// 註記
