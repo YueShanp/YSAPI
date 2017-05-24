@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using YSAPI.Models;
 
 namespace YSAPI.Implementation
@@ -7,7 +8,7 @@ namespace YSAPI.Implementation
     {
         IEnumerable<SalaryMaster> GetAll();
 
-        bool CreateSalary();
+        bool CreateSalary(Guid emplyeeId, SalaryMaster salaryMaster);
 
         bool CreateSalaryTransaction();
 

@@ -40,13 +40,7 @@ namespace YSAPI.Models
         /// </summary>
         [Required]
         [Display(Name = "實發總工資")]
-        public decimal TotalPay
-        {
-            get
-            {
-                return BasePay + OverTimePay + SalaryOtherPayTransactionList.Sum(x => x.Amount);
-            }
-        }
+        public decimal TotalPay { get; set; }
 
         /// <summary>
         /// 註記
@@ -54,8 +48,6 @@ namespace YSAPI.Models
         [MaxLength(2000)]
         [Display(Name = "註記")]
         public string Note { get; set; }
-
-        public virtual List<SalaryOtherPayTransaction> SalaryOtherPayTransactionList { get; set; }
 
         public virtual SalaryMaster SalaryMaster { get; set; }
     }

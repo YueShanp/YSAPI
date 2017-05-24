@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Net;
+using System.Web;
 using YSAPI.Contexts;
 using YSAPI.Models;
 
@@ -19,9 +21,7 @@ namespace YSAPI.Implementation
         public bool CreateEmplyeeService(Employee employee)
         {
             employee.InDateTime = DateTime.Now;
-            employee.InUser = "sys";
             employee.EditDateTime = DateTime.Now;
-            employee.EditUser = "sys";
             
             try
             {
@@ -34,17 +34,7 @@ namespace YSAPI.Implementation
             }
 
             return true;
-        }
-
-        private bool ValidateEmployee(Employee employee)
-        {
-            if (employee == null)
-            {
-                return false;
-            }
-
-            return true;
-        }
+        }       
 
         public bool UpdateEmplyeeService(Employee employee)
         {

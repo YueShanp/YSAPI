@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Web.Http;
 using YSAPI.Implementation;
 using YSAPI.Models;
@@ -15,5 +16,8 @@ namespace YSAPI.Controllers
         }
 
         public IEnumerable<SalaryMaster> GetAll() => _salaryService.GetAll();
+
+        [HttpPost]
+        public bool Create(Guid employeeId, SalaryMaster salaryMaster) => _salaryService.CreateSalary(employeeId, salaryMaster);
     }
 }

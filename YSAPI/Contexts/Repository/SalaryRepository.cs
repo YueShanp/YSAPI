@@ -14,7 +14,22 @@ namespace YSAPI.Contexts
         }
 
         public IEnumerable<SalaryMaster> GetAll()
-            => _context.Salarys.ToList();
+        {
+            var salaryList = from salaryMaster in _context.Salarys
+                             join employee in _context.Employees on
+                             salaryMaster.Emplyee.Id equals employee.Id
+                             select new { salaryMaster, employee };
+
+            var salary = new List<SalaryMaster>();
+            foreach (var sList in salaryList)
+            {
+                var sm = sList.salaryMaster;
+                sm.Emplyee = sList.employee;
+                salary.Add(sm);
+            }
+
+            return salary;
+        }
 
         public SalaryMaster GetSalaryDetail(Guid employeeId) 
             => _context.Salarys.FirstOrDefault(x => Guid.Equals(x.Emplyee.Id, employeeId));
@@ -26,7 +41,6 @@ namespace YSAPI.Contexts
                 throw new ArgumentException(nameof(SalaryMaster));
             }
 
-            _context.Entry(salaryMaster.SalaryTransactions).State = EntityState.Unchanged;
             _context.Salarys.Add(salaryMaster);
             SaveChanges();
         }

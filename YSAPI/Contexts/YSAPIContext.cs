@@ -14,5 +14,13 @@ namespace YSAPI.Contexts
         public DbSet<Employee> Employees { get; set; }
         public DbSet<SalaryMaster> Salarys { get; set; }
         public DbSet<SalaryTransaction> SalaryTransaction { get; set; }
+
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            ////base.OnModelCreating(modelBuilder);
+            
+            //// 移除複數資料表命名預設行為
+            modelBuilder.Conventions.Remove<System.Data.Entity.ModelConfiguration.Conventions.PluralizingTableNameConvention>();
+        }
     }
 }

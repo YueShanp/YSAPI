@@ -25,6 +25,5 @@ namespace YSAPI.Models
         public SalaryType Type { get; set; }
 
         public virtual Employee Emplyee { get; set; }
-        public virtual List<SalaryTransaction> SalaryTransactions { get; set; }
     }
 }
