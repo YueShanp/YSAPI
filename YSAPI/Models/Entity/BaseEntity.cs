@@ -14,6 +14,7 @@ namespace YSAPI.Models
         /// Primary Identity
         /// </summary>
         [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public virtual T Id { get; set; }
 
         /// <summary>

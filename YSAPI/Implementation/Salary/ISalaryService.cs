@@ -8,6 +8,8 @@ namespace YSAPI.Implementation
     {
         IEnumerable<SalaryMaster> GetAll();
 
+        bool CreateSalary(SalaryMaster salaryMaster);
+
         bool CreateSalary(Guid emplyeeId, SalaryMaster salaryMaster);
 
         bool CreateSalaryTransaction();

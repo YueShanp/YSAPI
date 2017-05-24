@@ -20,6 +20,8 @@ namespace YSAPI.Implementation
 
         public bool CreateEmplyeeService(Employee employee)
         {
+            //// TODO 一些自動產生值得部分，看能不能做到 model 定義去
+            employee.Id = Guid.NewGuid();
             employee.InDateTime = DateTime.Now;
             employee.EditDateTime = DateTime.Now;
             

@@ -16,12 +16,21 @@ namespace YSAPI.Implementation
             _salaryRepository = new SalaryRepository();
         }
 
+        public bool CreateSalary(SalaryMaster salaryMaster)
+        {
+            return CreateSalary(salaryMaster.Employee.Id, salaryMaster);
+        }
+
         public bool CreateSalary(Guid emplyeeId, SalaryMaster salaryMaster)
         {
             // TODO: validation.
             try
             {
-                salaryMaster.Emplyee = _employeeRepository.GetEmplyee(emplyeeId);
+                salaryMaster.Employee = _employeeRepository.GetEmplyee(emplyeeId);
+                
+                salaryMaster.Id = Guid.NewGuid();
+                salaryMaster.InDateTime = DateTime.Now;
+                salaryMaster.EditDateTime = DateTime.Now;
                 _salaryRepository.CreateSalary(salaryMaster);
 
                 return true;

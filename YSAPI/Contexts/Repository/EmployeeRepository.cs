@@ -18,7 +18,13 @@ namespace YSAPI.Contexts
         }
 
         public Employee GetEmplyee(Guid employeeId)
-            => base._context.Employees.FirstOrDefault((Employee x) => Guid.Equals(x.Id, employeeId));
+        {
+            var qEmployee = from e in _context.Employees.ToList()
+                            where string.Equals(e.Id, employeeId)
+                            select e;
+
+            return qEmployee.ToList().FirstOrDefault();
+        }
 
         public void CreateEmployee(Employee employee)
         {

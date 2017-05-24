@@ -24,6 +24,6 @@ namespace YSAPI.Models
         [Display(Name = "薪資類別")]
         public SalaryType Type { get; set; }
 
-        public virtual Employee Emplyee { get; set; }
+        public virtual Employee Employee { get; set; }
     }
 }

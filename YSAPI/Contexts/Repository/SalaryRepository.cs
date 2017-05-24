@@ -17,14 +17,14 @@ namespace YSAPI.Contexts
         {
             var salaryList = from salaryMaster in _context.Salarys
                              join employee in _context.Employees on
-                             salaryMaster.Emplyee.Id equals employee.Id
+                             salaryMaster.Employee.Id equals employee.Id
                              select new { salaryMaster, employee };
 
             var salary = new List<SalaryMaster>();
             foreach (var sList in salaryList)
             {
                 var sm = sList.salaryMaster;
-                sm.Emplyee = sList.employee;
+                sm.Employee = sList.employee;
                 salary.Add(sm);
             }
 
@@ -32,7 +32,7 @@ namespace YSAPI.Contexts
         }
 
         public SalaryMaster GetSalaryDetail(Guid employeeId) 
-            => _context.Salarys.FirstOrDefault(x => Guid.Equals(x.Emplyee.Id, employeeId));
+            => _context.Salarys.FirstOrDefault(x => Guid.Equals(x.Employee.Id, employeeId));
 
         public void CreateSalary(SalaryMaster salaryMaster)
         {
@@ -41,6 +41,7 @@ namespace YSAPI.Contexts
                 throw new ArgumentException(nameof(SalaryMaster));
             }
 
+            _context.Entry(salaryMaster.Employee).State = EntityState.Unchanged;
             _context.Salarys.Add(salaryMaster);
             SaveChanges();
         }

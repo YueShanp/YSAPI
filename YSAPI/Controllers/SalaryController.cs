@@ -18,6 +18,6 @@ namespace YSAPI.Controllers
         public IEnumerable<SalaryMaster> GetAll() => _salaryService.GetAll();
 
         [HttpPost]
-        public bool Create(Guid employeeId, SalaryMaster salaryMaster) => _salaryService.CreateSalary(employeeId, salaryMaster);
+        public bool Create(SalaryMaster salaryMaster) => _salaryService.CreateSalary(salaryMaster);
     }
 }
