@@ -36,5 +36,47 @@ namespace YSAPI.Contexts
             base._context.Employees.Add(employee);
             SaveChanges();
         }
+
+        public void EditEmployee(Employee e)
+        {
+            if (e == null)
+            {
+                throw new AggregateException(nameof(e));
+            }
+
+            try
+            {
+                var employee = base._context.Employees.Find(e.Id);
+                if (employee == null)
+                {
+                    Console.WriteLine("Data not found.");
+                    return;
+                }
+
+                // update entities.
+                employee.Address = e.Address;
+                employee.BirthDay = e.BirthDay;
+                employee.EditDateTime = e.EditDateTime;
+                employee.EditUser = e.EditUser;
+                employee.Email = e.Email;
+                employee.Name = e.Name;
+                employee.NickName = e.NickName;
+                employee.Note = e.Note;
+                employee.OnBoardDay = e.OnBoardDay;
+                employee.Phone = e.Phone;
+                employee.Phone2 = e.Phone2;
+                employee.Phone2Type = e.Phone2Type;
+                employee.PhoneType = e.PhoneType;
+                employee.Status = e.Status;
+                employee.ZipCode = e.ZipCode;
+
+                var rowCount = _context.SaveChanges();
+                Console.WriteLine(rowCount + " data updated.");
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
+        }
     }
 }

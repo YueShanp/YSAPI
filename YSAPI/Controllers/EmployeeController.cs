@@ -36,5 +36,12 @@ namespace YSAPI.Controllers
 
             return _employeeService.CreateEmplyeeService(e);
         }
+
+        [HttpPost]
+        public bool Edit(Employee e)
+        {
+            // TODO: add validation
+            return _employeeService.Edit(e);
+        }
     }
 }

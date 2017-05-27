@@ -9,6 +9,6 @@ namespace YSAPI.Implementation
 
         bool CreateEmplyeeService(Employee employee);
 
-        bool UpdateEmplyeeService(Employee employee);
+        bool Edit(Employee e);
     }
 }

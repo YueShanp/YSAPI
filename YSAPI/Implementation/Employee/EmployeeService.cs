@@ -24,23 +24,35 @@ namespace YSAPI.Implementation
             employee.Id = Guid.NewGuid();
             employee.InDateTime = DateTime.Now;
             employee.EditDateTime = DateTime.Now;
-            
+
             try
             {
                 _employeeRepository.CreateEmployee(employee);
+
+                return true;
             }
             catch (ArgumentException ex)
             {
                 // TODO: write log ex
                 return false;
             }
+        }
 
-            return true;
-        }       
-
-        public bool UpdateEmplyeeService(Employee employee)
+        public bool Edit(Employee e)
         {
-            throw new NotImplementedException();
+            e.EditDateTime = DateTime.Now;
+
+            try
+            {
+                _employeeRepository.EditEmployee(e);
+
+                return true;
+            }
+            catch (Exception)
+            {
+                // TODO: error actions.
+                return false;
+            }
         }
     }
 }
