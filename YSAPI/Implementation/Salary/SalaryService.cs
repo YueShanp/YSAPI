@@ -50,7 +50,6 @@ namespace YSAPI.Implementation
 
         public bool EditSalary(SalaryMaster s)
         {
-
             try
             {
                 s.EditDateTime = DateTime.Now;
@@ -63,6 +62,25 @@ namespace YSAPI.Implementation
             }
 
             return true;
+        }
+
+        public bool CreateSalaryOtherPayType(SalaryOtherPayType salaryOtherPayType)
+        {
+            try
+            {
+                salaryOtherPayType.Id = Guid.NewGuid();
+                salaryOtherPayType.InDateTime = DateTime.Now;
+                salaryOtherPayType.EditDateTime = DateTime.Now;
+
+                _salaryRepository.CreateSalaryOtherPayType(salaryOtherPayType);
+
+                return true;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
         }
     }
 }

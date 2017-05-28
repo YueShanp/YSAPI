@@ -11,5 +11,6 @@ namespace YSAPI.Contexts
         void CreateSalary(SalaryMaster salaryMaster);
         void CreateSalaryTransaction(SalaryTransaction salaryTransaction);
         void EditSalary(SalaryMaster s);
+        void CreateSalaryOtherPayType(SalaryOtherPayType salaryOtherPayType);
     }
 }

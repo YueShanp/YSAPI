@@ -53,7 +53,7 @@ namespace YSAPI.Contexts
                 throw new AggregateException(nameof(SalaryTransaction));
             }
 
-            _context.SalaryTransaction.Add(salaryTransaction);
+            _context.SalaryTransactions.Add(salaryTransaction);
             SaveChanges();
         }
 
@@ -91,6 +91,17 @@ namespace YSAPI.Contexts
 
                 throw;
             }
+        }
+
+        public void CreateSalaryOtherPayType(SalaryOtherPayType salaryOtherPayType)
+        {
+            if (salaryOtherPayType == null)
+            {
+                throw new AggregateException(nameof(SalaryTransaction));
+            }
+
+            _context.SalaryOtherPayTypes.Add(salaryOtherPayType);
+            SaveChanges();
         }
     }
 }

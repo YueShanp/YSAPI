@@ -15,5 +15,7 @@ namespace YSAPI.Implementation
         bool CreateSalaryTransaction();
 
         bool EditSalary(SalaryMaster s);
+
+        bool CreateSalaryOtherPayType(SalaryOtherPayType salaryOtherPayType);
     }
 }

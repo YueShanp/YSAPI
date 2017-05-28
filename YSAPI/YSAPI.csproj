@@ -175,6 +175,10 @@
     <Compile Include="Migrations\201705280402401_AddSalaryMasterOddPay.Designer.cs">
       <DependentUpon>201705280402401_AddSalaryMasterOddPay.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201705280513185_AddSalaryOtherPayContext.cs" />
+    <Compile Include="Migrations\201705280513185_AddSalaryOtherPayContext.Designer.cs">
+      <DependentUpon>201705280513185_AddSalaryOtherPayContext.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Entity\BaseEntity.cs" />
     <Compile Include="Models\Entity\Employee.cs" />
@@ -216,6 +220,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201705280402401_AddSalaryMasterOddPay.resx">
       <DependentUpon>201705280402401_AddSalaryMasterOddPay.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201705280513185_AddSalaryOtherPayContext.resx">
+      <DependentUpon>201705280513185_AddSalaryOtherPayContext.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

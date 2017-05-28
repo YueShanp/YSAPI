@@ -13,7 +13,9 @@ namespace YSAPI.Contexts
 
         public DbSet<Employee> Employees { get; set; }
         public DbSet<SalaryMaster> Salarys { get; set; }
-        public DbSet<SalaryTransaction> SalaryTransaction { get; set; }
+        public DbSet<SalaryTransaction> SalaryTransactions { get; set; }
+        public DbSet<SalaryOtherPayTransaction> SalaryOtherPayTransactions { get; set; }
+        public DbSet<SalaryOtherPayType> SalaryOtherPayTypes { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
