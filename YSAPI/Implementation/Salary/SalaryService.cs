@@ -16,6 +16,8 @@ namespace YSAPI.Implementation
             _salaryRepository = new SalaryRepository();
         }
 
+        public SalaryMaster Get(Guid id)=> _salaryRepository.GetSalary(id);
+
         public bool CreateSalary(SalaryMaster salaryMaster)
         {
             return CreateSalary(salaryMaster.Employee.Id, salaryMaster);
@@ -81,6 +83,6 @@ namespace YSAPI.Implementation
 
                 throw;
             }
-        }
+        }       
     }
 }

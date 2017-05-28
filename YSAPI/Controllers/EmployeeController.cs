@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Web;
@@ -20,6 +21,8 @@ namespace YSAPI.Controllers
         //GET: /<controller>/Emplyees
         [HttpGet]
         public IEnumerable<Employee> GetAll() => _employeeService.GetAllEmployee();
+
+        public Employee Get(Guid id) => _employeeService.Get(id);
 
         [HttpPost]
         public bool Create(Employee e)

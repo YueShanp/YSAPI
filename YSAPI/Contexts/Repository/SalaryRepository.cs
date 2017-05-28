@@ -31,7 +31,7 @@ namespace YSAPI.Contexts
             return salary;
         }
 
-        public SalaryMaster GetSalaryDetail(Guid employeeId) 
+        public SalaryMaster GetSalaryDetail(Guid employeeId)
             => _context.Salarys.FirstOrDefault(x => Guid.Equals(x.Employee.Id, employeeId));
 
         public void CreateSalary(SalaryMaster salaryMaster)
@@ -81,7 +81,7 @@ namespace YSAPI.Contexts
                 salary.HealthInsurance = s.HealthInsurance;
 
                 _context.Entry(salary.Employee).State = EntityState.Unchanged;
-                
+
                 var r = _context.SaveChanges();
                 Console.WriteLine($"{r} rows updated");
 
@@ -103,5 +103,7 @@ namespace YSAPI.Contexts
             _context.SalaryOtherPayTypes.Add(salaryOtherPayType);
             SaveChanges();
         }
+
+        public SalaryMaster GetSalary(Guid id) => _context.Salarys.Find(id);
     }
 }

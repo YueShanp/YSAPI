@@ -182,6 +182,7 @@
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Entity\BaseEntity.cs" />
     <Compile Include="Models\Entity\Employee.cs" />
+    <Compile Include="Models\Entity\Salary\MonthTransationModel.cs" />
     <Compile Include="Models\Entity\Salary\SalaryMaster.cs" />
     <Compile Include="Models\Entity\Salary\SalaryOtherPayTransaction.cs" />
     <Compile Include="Models\Entity\Salary\SalaryTransaction.cs" />

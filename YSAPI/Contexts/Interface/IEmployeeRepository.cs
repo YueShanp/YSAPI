@@ -11,6 +11,7 @@ namespace YSAPI.Contexts
         Employee GetEmplyee(Guid employeeId);
 
         void CreateEmployee(Employee Employee);
+
         void EditEmployee(Employee e);
     }
 }

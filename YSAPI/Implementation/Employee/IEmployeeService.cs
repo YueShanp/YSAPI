@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using YSAPI.Models;
 
 namespace YSAPI.Implementation
@@ -10,5 +11,7 @@ namespace YSAPI.Implementation
         bool CreateEmplyeeService(Employee employee);
 
         bool Edit(Employee e);
+
+        Employee Get(Guid id);
     }
 }

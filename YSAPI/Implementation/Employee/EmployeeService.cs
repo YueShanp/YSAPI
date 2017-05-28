@@ -18,6 +18,8 @@ namespace YSAPI.Implementation
 
         public IEnumerable<Employee> GetAllEmployee() => _employeeRepository.GetAllEmployee();
 
+        public Employee Get(Guid id) => _employeeRepository.GetEmplyee(id);
+
         public bool CreateEmplyeeService(Employee employee)
         {
             //// TODO 一些自動產生值得部分，看能不能做到 model 定義去
@@ -53,6 +55,6 @@ namespace YSAPI.Implementation
                 // TODO: error actions.
                 return false;
             }
-        }
+        }       
     }
 }
