@@ -10,5 +10,6 @@ namespace YSAPI.Contexts
         SalaryMaster GetSalaryDetail(Guid employeeId);
         void CreateSalary(SalaryMaster salaryMaster);
         void CreateSalaryTransaction(SalaryTransaction salaryTransaction);
+        void EditSalary(SalaryMaster s);
     }
 }

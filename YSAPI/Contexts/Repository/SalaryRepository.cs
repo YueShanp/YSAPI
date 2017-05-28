@@ -55,6 +55,40 @@ namespace YSAPI.Contexts
 
             _context.SalaryTransaction.Add(salaryTransaction);
             SaveChanges();
-        }        
+        }
+
+        public void EditSalary(SalaryMaster s)
+        {
+            if (s == null)
+            {
+                throw new AggregateException(nameof(SalaryTransaction));
+            }
+
+            var salary = _context.Salarys.Find(s.Id);
+
+            if (salary == null)
+            {
+                throw new NotFiniteNumberException($"{nameof(s)}: {s.Id} not found.");
+            }
+
+            try
+            {
+                salary.BasePay = s.BasePay;
+                salary.EditUser = s.EditUser;
+                salary.Status = s.Status;
+                salary.Type = s.Type;
+
+                _context.Entry(salary.Employee).State = EntityState.Unchanged;
+                
+                var r = _context.SaveChanges();
+                Console.WriteLine($"{r} rows updated");
+
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
     }
 }

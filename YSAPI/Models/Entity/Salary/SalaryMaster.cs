@@ -24,6 +24,12 @@ namespace YSAPI.Models
         [Display(Name = "薪資類別")]
         public SalaryType Type { get; set; }
 
+        [Display(Name = "勞保")]
+        public decimal LaborInsurance { get; set; }
+
+        [Display(Name = "健保")]
+        public decimal HealthInsurance { get; set; }
+
         public virtual Employee Employee { get; set; }
     }
 }

@@ -163,6 +163,15 @@
     <Compile Include="Implementation\Employee\IEmployeeService.cs" />
     <Compile Include="Implementation\Salary\ISalaryService.cs" />
     <Compile Include="Implementation\Salary\SalaryService.cs" />
+    <Compile Include="Migrations\201705241425028_InitialCreate.cs" />
+    <Compile Include="Migrations\201705241425028_InitialCreate.Designer.cs">
+      <DependentUpon>201705241425028_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201705280325134_AddSalaryMasterInsurance.cs" />
+    <Compile Include="Migrations\201705280325134_AddSalaryMasterInsurance.Designer.cs">
+      <DependentUpon>201705280325134_AddSalaryMasterInsurance.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Entity\BaseEntity.cs" />
     <Compile Include="Models\Entity\Employee.cs" />
     <Compile Include="Models\Entity\Salary\SalaryMaster.cs" />
@@ -193,6 +202,14 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201705241425028_InitialCreate.resx">
+      <DependentUpon>201705241425028_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201705280325134_AddSalaryMasterInsurance.resx">
+      <DependentUpon>201705280325134_AddSalaryMasterInsurance.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

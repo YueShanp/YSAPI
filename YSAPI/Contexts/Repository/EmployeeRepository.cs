@@ -49,8 +49,7 @@ namespace YSAPI.Contexts
                 var employee = base._context.Employees.Find(e.Id);
                 if (employee == null)
                 {
-                    Console.WriteLine("Data not found.");
-                    return;
+                    throw new Exception($"{nameof(e)}: {e.Id} not found");
                 }
 
                 // update entities.
@@ -71,7 +70,7 @@ namespace YSAPI.Contexts
                 employee.ZipCode = e.ZipCode;
 
                 var rowCount = _context.SaveChanges();
-                Console.WriteLine(rowCount + " data updated.");
+                Console.WriteLine($"{rowCount} data updated.");
             }
             catch (Exception ex)
             {

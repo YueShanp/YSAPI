@@ -19,5 +19,14 @@ namespace YSAPI.Controllers
 
         [HttpPost]
         public bool Create(SalaryMaster salaryMaster) => _salaryService.CreateSalary(salaryMaster);
+
+        [HttpPost]
+        public bool Edit(SalaryMaster s) => _salaryService.EditSalary(s);
+
+        [HttpPost]
+        public bool CreateMonthTransation() => true;
+
+        [HttpPost]
+        public bool EditMonthTransation() => true;
     }
 }

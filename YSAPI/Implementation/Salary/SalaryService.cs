@@ -27,18 +27,18 @@ namespace YSAPI.Implementation
             try
             {
                 salaryMaster.Employee = _employeeRepository.GetEmplyee(emplyeeId);
-                
+
                 salaryMaster.Id = Guid.NewGuid();
                 salaryMaster.InDateTime = DateTime.Now;
                 salaryMaster.EditDateTime = DateTime.Now;
                 _salaryRepository.CreateSalary(salaryMaster);
-
-                return true;
             }
             catch (Exception ex)
             {
-                return false;
+                throw;
             }
+
+            return true;
         }
 
         public bool CreateSalaryTransaction()
@@ -48,9 +48,21 @@ namespace YSAPI.Implementation
 
         public IEnumerable<SalaryMaster> GetAll() => _salaryRepository.GetAll();
 
-        public bool UpdateSalary()
+        public bool EditSalary(SalaryMaster s)
         {
-            throw new NotImplementedException();
+
+            try
+            {
+                s.EditDateTime = DateTime.Now;
+                _salaryRepository.EditSalary(s);
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+
+            return true;
         }
     }
 }
