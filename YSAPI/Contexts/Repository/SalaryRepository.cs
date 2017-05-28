@@ -77,6 +77,8 @@ namespace YSAPI.Contexts
                 salary.EditUser = s.EditUser;
                 salary.Status = s.Status;
                 salary.Type = s.Type;
+                salary.LaborInsurance = s.LaborInsurance;
+                salary.HealthInsurance = s.HealthInsurance;
 
                 _context.Entry(salary.Employee).State = EntityState.Unchanged;
                 
