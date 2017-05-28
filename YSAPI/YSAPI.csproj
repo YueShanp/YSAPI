@@ -171,6 +171,10 @@
     <Compile Include="Migrations\201705280325134_AddSalaryMasterInsurance.Designer.cs">
       <DependentUpon>201705280325134_AddSalaryMasterInsurance.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201705280402401_AddSalaryMasterOddPay.cs" />
+    <Compile Include="Migrations\201705280402401_AddSalaryMasterOddPay.Designer.cs">
+      <DependentUpon>201705280402401_AddSalaryMasterOddPay.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Entity\BaseEntity.cs" />
     <Compile Include="Models\Entity\Employee.cs" />
@@ -209,6 +213,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201705280325134_AddSalaryMasterInsurance.resx">
       <DependentUpon>201705280325134_AddSalaryMasterInsurance.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201705280402401_AddSalaryMasterOddPay.resx">
+      <DependentUpon>201705280402401_AddSalaryMasterOddPay.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

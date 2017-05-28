@@ -36,7 +36,25 @@ namespace YSAPI.Models
         public decimal OverTimePay { get; set; }
 
         /// <summary>
-        /// 實發總工資
+        /// 工資小計 (實際工資)
+        /// </summary>
+        [Display(Name = "工資小計")]
+        public decimal SubTotalPay { get; set; }
+
+        /// <summary>
+        /// 下期零頭工資
+        /// </summary>
+        [Display(Name = "下期零頭工資")]
+        public decimal ToNextMonthOddPay { get; set; }
+
+        /// <summary>
+        /// 上期零頭工資
+        /// </summary>
+        [Display(Name = "上期零頭工資")]
+        public decimal FromLastMonthOddPay { get; set; }
+
+        /// <summary>
+        /// 實發總工資 (扣除零頭)
         /// </summary>
         [Required]
         [Display(Name = "實發總工資")]
